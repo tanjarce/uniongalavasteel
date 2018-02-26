@@ -1,0 +1,121 @@
+.withbackgroundimage{
+    background: url('../images/pattern-geo.jpg') center;
+    background-size: 70px;
+}
+
+.login{
+    padding: 30px;
+    max-width: 425px;
+    margin: auto;
+    background: white;
+    height: 100vh;
+    box-shadow: 1px 5px 5px rgba(black, 0.1), 0px 2px 1px rgba(black, 0.1);
+    @include media(426px){
+        position: absolute;
+        width: 425px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        margin: auto;
+        margin-top: -250px;
+        margin-left: -214.5px
+    }
+}
+.logo{
+    flex-wrap: wrap;
+    height: 60px;
+    &__pic{
+        width: 250px;
+        img{
+            width: 100%;
+        }
+    }
+    &__text{
+        margin-top: 5px;
+        @extend .logo__pic;
+        width: 150px;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+
+.loginForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    &__headtext{
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    &__h1{
+        color: $text;
+        font-weight: normal;
+        margin: 0;
+        align-self: flex-start;
+    }
+    &__p{
+        @extend .loginForm__h1;
+        margin-top: 7px;
+    }
+    &__inputWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+        height: 34px;
+    }
+
+    &__input{
+        width: 100%;
+        padding: 5px 0;
+        z-index: 5;
+        background: transparent;
+    }
+    &__placeholder{
+        position: absolute;
+        top: 2px;
+        font-family: sans-serif;
+        color: $lighttext;    
+        transition: all 0.2s ease-in-out;   
+    }
+    &__errormessage{
+        color: $red;
+        // background: pink;
+        font-size: 13px;
+        margin-top: 5px;
+        // margin-left: auto;
+    }
+
+    &__underline{
+        height: 1px;
+        width: 100%;
+        border-radius: 2px;
+        background: $border;
+        position: relative;
+        .coloredline{
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background: $green;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+    
+
+    &__button{
+        width: 100px;
+        background: $green; 
+        color: white;
+        height: 35px;
+        margin-left: auto;
+        font-weight: bold;
+    }
+    &__forgotLink{
+        color: $green;
+        font-size: 14px;
+        // align-self: center;
+    }
+}

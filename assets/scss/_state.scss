@@ -1,0 +1,29 @@
+// @import 'animate';
+
+.loginForm{
+    &__input:focus + .loginForm__underline > .coloredline{
+        right: 0;
+        left: 0;
+    }
+
+    &__placeholder-isup{
+        transform: translateY(-20px);
+        font-size: 11px;
+     }
+    &__placeholder-error{
+        color: $red;
+    }
+    &__underline-error{
+            background: $red;
+            height: 2px;
+        .coloredline{
+            background: $red;
+        }
+    }
+}
+
+
+.logo__text-isup{
+    transform: translateY(0);
+    opacity: 1;
+}
