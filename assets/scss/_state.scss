@@ -27,3 +27,17 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+
+.dropdown-show{
+    display: inline-block;
+}
+
+.dropdown__list{
+    &:hover:not(.listName){
+        background: $green;
+    }
+    &:hover:not(.listName) a{
+        color: white;
+    }
+}

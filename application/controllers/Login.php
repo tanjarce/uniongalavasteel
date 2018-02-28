@@ -45,7 +45,11 @@ class Login extends CI_Controller {
 		$data['user_data'] = $this->model->fetch_user_data($user);
 		$create_session = array(
 			'user' => $user,
-			'role_id' => $data['user_data']['role_id']
+			'role_id' => $data['user_data']['role_id'],
+			'emp_id' => $data['user_data']['emp_id'],
+			'user_name' => $data['user_data']['user_name'],
+			'emp_firstName' => $data['user_data']['emp_firstname'],
+			'emp_lastName' => $data['user_data']['emp_lastname']
 		);
 		$this->session->set_userdata($create_session);
 	}
