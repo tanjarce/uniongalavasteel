@@ -6,23 +6,27 @@
 }
 
 .header{
-    // background: whitesmoke;
+    margin: auto;
+    background: $modebg1;
     display: flex;
     height: 100%;
     align-items: center;
     padding: 0 20px;
     position: relative;
-    // max-width: 890px;
+    // background: pink;
     &__logo{
         // background: lightblue;
         position: absolute;
         width: 50px;
         left: 50%;
-        margin-left: -30px;
-        img{
+        margin-left: -25px;
+    }
+    &__logoPic{
             width: 50px;
             // height: 28px;
-        }
+    }
+    &__logoText{
+        display: none;
     }
     &__user{
         // background: coral;
@@ -38,15 +42,23 @@
     height: 30px;
     width: 20px;
     // background: pink;
+    // align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
     cursor: pointer;
+    // &__lineContainer{
+        // background: lightblue;
+    // }
     &__line{
-        background: $text;
-        height: 3px;
+        // flex-wrap: wrap;
+        background: $modecolor1;
+        height: 2px;
         width: 100%;
-        margin: 5px 0;
+        margin: 4px 0;
     }
     &__line:first-child{
-        width: 60%;
+        // width: 60%;
     }
 
 }
@@ -54,6 +66,7 @@
 .user{
     // background: pink;
     position: relative;
+    cursor: pointer;
     &__avatar{
         background: $green;
         height: 30px;
@@ -63,17 +76,18 @@
     &__dropdown{
         display: none;
         position: absolute;
-        top: 135%;
+        top: 145%;
         right: 50%;
-        min-width: 170px;
+        min-width: 220px;
         width: auto;
         margin-right: -25px;
-        box-shadow: 1px 5px 5px rgba(black, 0.1), 0px 2px 1px rgba(black, 0.1); 
-        background: white;
-        padding: 10px 0;
-        border: solid $border 1px;
+        box-shadow:  2px 3px 15px $shadow, 1px 2px 2px $shadow; 
+        background: $modebg1;
+        // padding: 10px 0;
+        // border: solid $modeborder 1px;
         border-radius: 1px;
-    
+        padding: 6px 0;
+        color: $modecolor1;
     }
 }
 .dropdown{
@@ -90,8 +104,7 @@
             font-size: 15px;
             display: inline-block;
             width: 100%;
-            padding: 7px 15px;
-            color: $text;
+            padding: 9px 15px;
         }
         &:last-child{
             // border: none;
@@ -99,25 +112,25 @@
     }
     &__separator{
         height: 1px;
-        background: $border;
+        background: $modeborder;
         list-style: none;
-        width: 92%;
-        margin: 5px auto;
+        // width: 92%;
+        margin: 6px auto;
     }
     &__name{
-        padding: 7px 15px;
+        padding: 9px 15px;
         span{
             display: block;
         }
         .fullname{
-            color: $green;
+            // color: $green;
             font-weight: bolder;
             white-space: nowrap;
             margin-bottom: 3px;
         }
         .username{
             font-size: 15px;
-            color: $lighttext;
+            color: $modecolor2;
         }
     }
     &:before{
@@ -125,7 +138,7 @@
         position: absolute;
         display: inline-block;
         border: solid 10px transparent;
-        border-bottom: 10px solid $border;
+        border-bottom: 10px solid $shadow;
         right: 15px;
         bottom: 100%;
     }
@@ -134,7 +147,7 @@
         position: absolute;
         display: inline-block;
         border: solid 9px transparent;
-        border-bottom: 9px solid white;
+        border-bottom: 9px solid $modebg1;
         right: 16px;
         bottom: 100%;
     }
@@ -144,8 +157,11 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    background: white;
+    background: $modebg4;
     width: 200px;
-    box-shadow: 1px 5px 5px rgba(black, 0.1), 0px 2px 1px rgba(black, 0.1);
-    display: none;
+    box-shadow: 1px 5px 5px $shadow, 0px 2px 1px $shadow;
+    // display: none;
+    left: -220px;
+    transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    color: $modecolor1;
 }

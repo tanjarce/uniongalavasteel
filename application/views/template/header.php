@@ -6,7 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.dataTables.min.css"> -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
+    <?php 
+        $set_mode = $this->session->userdata('mode'); 
+        if($set_mode == 1){
+            $mode = "_nightmode";
+        }
+        if($set_mode == 0){
+            $mode = "";
+        }
+    ?>
+
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/style' . $mode .'.css'?>" nm="<?php echo $set_mode?>">
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/favicon.png" type="image/x-icon">
     <title>UnionGalvasteel</title>
 </head>

@@ -38,6 +38,10 @@
         background: $green;
     }
     &:hover:not(.listName) a{
-        color: white;
+        color: $modecolor-negative;
     }
+}
+
+.navigation-show{
+    left: 0;
 }

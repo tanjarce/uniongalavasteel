@@ -49,9 +49,11 @@ class Login extends CI_Controller {
 			'emp_id' => $data['user_data']['emp_id'],
 			'user_name' => $data['user_data']['user_name'],
 			'emp_firstName' => $data['user_data']['emp_firstname'],
-			'emp_lastName' => $data['user_data']['emp_lastname']
+			'emp_lastName' => $data['user_data']['emp_lastname'],
+			'mode' => $data['user_data']['night_mode']
 		);
 		$this->session->set_userdata($create_session);
+
 	}
 					
 	public function logout(){

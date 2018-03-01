@@ -16,6 +16,7 @@ class Login_model extends CI_model{
                       ug_r_users.user_name,
                       ug_r_users.emp_id,
                       ug_r_users.role_id,
+                      ug_r_users.night_mode,
                       ug_r_employee.emp_firstname,
                       ug_r_employee.emp_lastname,
                       ');
