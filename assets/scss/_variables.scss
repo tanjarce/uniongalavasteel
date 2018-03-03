@@ -8,13 +8,13 @@ $layout2: rgb(242, 242, 242);
 $color1: rgb(51, 51, 51);
 $color2: rgb(150, 150, 150);
 
-$hover: rgb(238, 238, 238);
+$hover: rgba(0, 0, 0, 0.04);
 $active: darken($hover, 5%);
 
 
 $color-icon: rgb(136, 136, 136);
 $color-icon-light: lighten(rgb(136, 136, 136), 45%);
-$border: rgba(104, 104, 104, 0.05);
+$border: rgba(104, 104, 104, 0.07);
 
 $shadow: rgba(0, 0, 0, 0.05);
 $shadow2: rgba(0, 0, 0, 0.09);

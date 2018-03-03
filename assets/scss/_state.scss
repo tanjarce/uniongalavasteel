@@ -41,6 +41,14 @@
         background: $active;
     }
 }
+.mainnav__list{
+    &:hover{
+        background: $hover;
+    }
+    &:active{
+        background: $active;
+    }
+}
 
 .navigation-show{
     left: 0;

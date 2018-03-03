@@ -22,6 +22,7 @@
 
 .navigation{
     position: fixed;
+    z-index: 3;
     top: 0;
     bottom: 0;
     background: $layout2;
