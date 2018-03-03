@@ -35,13 +35,27 @@
 
 .dropdown__list{
     &:hover:not(.listName){
-        background: $green;
+        background: $hover;
     }
-    &:hover:not(.listName) a{
-        color: $modecolor-negative;
+    &:active:not(.listName){
+        background: $active;
     }
 }
 
 .navigation-show{
     left: 0;
+}
+
+.listItem__nightmode_switch-off{
+    background: $color-icon;
+    .switch__controller{
+        margin-left: -2px;
+
+    }
+}
+.listItem__nightmode_switch-on{
+    background: $green;
+    .switch__controller{
+        margin-left: 14px;
+    }
 }

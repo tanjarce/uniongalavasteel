@@ -12,14 +12,21 @@ class Main extends CI_Controller {
             redirect(base_url().'login');
         }
     }
+
     
     public function set_mode(){
         $mode = $this->input->post('mode');
         $id =  $this->session->userdata('emp_id');
 
         $this->load->model('Employee_model', 'model');
-        echo $this->model->input_mode($mode, $id);
-        
+        $this->model->input_mode($mode, $id);
+        $this->get_mode($id);
+    }
+
+    public function get_mode($id){
+        $this->load->model('Employee_model', 'model');
+        $data['user_data'] = $this->model->get_mode($id);
+        $this->session->set_userdata('mode', $data['user_data']['night_mode']);
     }
 }
 

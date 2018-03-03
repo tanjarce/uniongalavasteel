@@ -1,13 +1,16 @@
-.dashboard{
-    background: pink;
-    display: grid;
-    width: 300px;
-    height: 300px;
+// for the the color of the icons
+.ugs_red_icon{
+    fill: $red;
 }
+.ugs_green_icon{
+    fill: $green;
+}
+
+
 
 .header{
     margin: auto;
-    background: $modebg1;
+    background: $layout1;
     display: flex;
     height: 100%;
     align-items: center;
@@ -19,12 +22,12 @@
         position: absolute;
         width: 50px;
         left: 50%;
-        margin-left: -25px;
+        margin-left: -30px;
+        // background: pink;
     }
     &__logoPic{
-            width: 50px;
-            // height: 28px;
-    }
+            display: flex;
+        }
     &__logoText{
         display: none;
     }
@@ -52,15 +55,11 @@
     // }
     &__line{
         // flex-wrap: wrap;
-        background: $modecolor1;
+        background: $color1;
         height: 2px;
         width: 100%;
         margin: 4px 0;
     }
-    &__line:first-child{
-        // width: 60%;
-    }
-
 }
 
 .user{
@@ -82,12 +81,12 @@
         width: auto;
         margin-right: -25px;
         box-shadow:  2px 3px 15px $shadow, 1px 2px 2px $shadow; 
-        background: $modebg1;
+        background: $layout1;
         // padding: 10px 0;
-        // border: solid $modeborder 1px;
+        // border: solid $border 1px;
         border-radius: 1px;
         padding: 6px 0;
-        color: $modecolor1;
+        color: $color1;
     }
 }
 .dropdown{
@@ -96,29 +95,42 @@
         padding: 0;
         width: 100%;
     }
+    &__list_name{
+        list-style: none;
+    }
 
     &__list{
         list-style: none;
+        height: 35px;
+        // background: pink;
         // border-bottom: solid whitesmoke 1px;
-        a{
-            font-size: 15px;
-            display: inline-block;
-            width: 100%;
-            padding: 9px 15px;
-        }
-        &:last-child{
-            // border: none;
-        }
+    }
+    &__anchor{
+        font-size: 15px;
+        display: block;
+        // width: 100%;
+        height: 100%;
+        // padding: 9px 15px;
+        position: relative;
+        // background: coral;
+    }
+    &__containerlist_item{
+        // background: lightblue;
+        height: 100%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        // justify-content: center;
     }
     &__separator{
         height: 1px;
-        background: $modeborder;
+        background: $border;
         list-style: none;
         // width: 92%;
         margin: 6px auto;
     }
     &__name{
-        padding: 9px 15px;
+        padding: 10px 20px;
         span{
             display: block;
         }
@@ -130,7 +142,7 @@
         }
         .username{
             font-size: 15px;
-            color: $modecolor2;
+            color: $color-icon;
         }
     }
     &:before{
@@ -147,21 +159,35 @@
         position: absolute;
         display: inline-block;
         border: solid 9px transparent;
-        border-bottom: 9px solid $modebg1;
+        border-bottom: 9px solid $layout1;
         right: 16px;
         bottom: 100%;
     }
 }
 
-.navigation{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    background: $modebg4;
-    width: 200px;
-    box-shadow: 1px 5px 5px $shadow, 0px 2px 1px $shadow;
-    // display: none;
-    left: -220px;
-    transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
-    color: $modecolor1;
+.listItem{
+    &__icon{
+        width: 15px;
+        height: 15px;
+        margin-right: 12px;
+    }
+    &__string{
+        // background: pink;
+    }
+    &__nightmode_switch{
+        width: 32px;
+        height: 13px;
+        margin-left: auto;
+        border-radius: 30px;
+        transition: all 0.2s ease;
+        .switch__controller{
+            margin-top: -4px;
+            width: 20px;
+            height: 20px;
+            background: $color-icon-light;
+            border-radius: 100%;
+            box-shadow: 2px 3px 3px $shadow2, 1px 2px 2px $shadow2, 0px 0px 10px $shadow2, 0px 0px 5px $shadow2;
+            transition: all 0.2s ease;
+        }
+    }
 }

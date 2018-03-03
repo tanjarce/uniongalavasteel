@@ -74,9 +74,21 @@ class Employee_model extends CI_model {
   }
 
   public function fetch_info() {
-
   }
+  
+  public function get_mode($id){
 
+    $this->db->select('ug_r_users.night_mode');
+    $this->db->from('ug_r_users');
+    $this->db->where('ug_r_users.emp_id', $id);
+  
+    // $qry = $this->db->get();
+    $qry = $this->db->get()->row_array();
+    
+  
+    return $qry;
+  }
+  
   public function input_mode($mode, $id){
     $this->db->where('ug_r_users.emp_id', $id);
     $this->db->update('ug_r_users', array('night_mode' => $mode));

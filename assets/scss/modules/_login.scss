@@ -1,3 +1,5 @@
+$underline: #dddddd;
+
 .withbackgroundimage{
     background: url('../images/pattern-geo.jpg') center;
     background-size: 70px;
@@ -49,7 +51,7 @@
         margin-bottom: 15px;
     }
     &__h1{
-        color: $text;
+        color: $color1;
         font-weight: normal;
         margin: 0;
         align-self: flex-start;
@@ -77,7 +79,7 @@
         position: absolute;
         top: 2px;
         font-family: sans-serif;
-        color: $lighttext;    
+        color: $color2;    
         transition: all 0.2s ease-in-out;   
     }
     &__errormessage{
@@ -92,7 +94,7 @@
         height: 1px;
         width: 100%;
         border-radius: 2px;
-        background: $border;
+        background: $underline;
         position: relative;
         .coloredline{
             position: absolute;

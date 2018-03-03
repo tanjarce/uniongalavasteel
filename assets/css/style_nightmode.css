@@ -397,11 +397,11 @@ template {
   display: none; }
 
 *::-moz-selection {
-  background: rgba(230, 28, 47, 0.7);
+  background: rgba(26, 119, 39, 0.7);
   color: white; }
 
 *::selection {
-  background: rgba(230, 28, 47, 0.7);
+  background: rgba(26, 119, 39, 0.7);
   color: white; }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -445,12 +445,29 @@ body {
   padding: 0; }
 
 .head {
-  height: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background: #232323; }
+  background: #232323;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px; }
+
+.navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: #1c1c1c;
+  width: 200px;
+  -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5), 0px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5), 0px 2px 1px rgba(0, 0, 0, 0.5);
+  left: -220px;
+  -webkit-transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  color: #e6e6e6; }
 
 .withbackgroundimage {
   background: url("../images/pattern-geo.jpg") center;
@@ -503,7 +520,7 @@ body {
     text-align: left;
     margin-bottom: 15px; }
   .loginForm__h1, .loginForm__p {
-    color: #333333;
+    color: #e6e6e6;
     font-weight: normal;
     margin: 0;
     -ms-flex-item-align: start;
@@ -530,11 +547,11 @@ body {
     position: absolute;
     top: 2px;
     font-family: sans-serif;
-    color: #b4b4b4;
+    color: #969696;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
   .loginForm__errormessage {
-    color: #e61c2f;
+    color: #e9272f;
     font-size: 13px;
     margin-top: 5px; }
   .loginForm__underline {
@@ -548,26 +565,25 @@ body {
       left: 50%;
       right: 50%;
       height: 2px;
-      background: #005f27;
+      background: #1a7727;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
   .loginForm__button {
     width: 100px;
-    background: #005f27;
+    background: #1a7727;
     color: white;
     height: 35px;
     margin-left: auto;
     font-weight: bold; }
   .loginForm__forgotLink {
-    color: #005f27;
+    color: #1a7727;
     font-size: 14px; }
 
-.dashboard {
-  background: pink;
-  display: -ms-grid;
-  display: grid;
-  width: 300px;
-  height: 300px; }
+.ugs_red_icon {
+  fill: #e9272f; }
+
+.ugs_green_icon {
+  fill: #1a7727; }
 
 .header {
   margin: auto;
@@ -585,9 +601,11 @@ body {
     position: absolute;
     width: 50px;
     left: 50%;
-    margin-left: -25px; }
+    margin-left: -30px; }
   .header__logoPic {
-    width: 50px; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .header__logoText {
     display: none; }
   .header__user {
@@ -622,7 +640,7 @@ body {
   position: relative;
   cursor: pointer; }
   .user__avatar {
-    background: #005f27;
+    background: #1a7727;
     height: 30px;
     width: 30px;
     border-radius: 1px; }
@@ -646,13 +664,28 @@ body {
   padding: 0;
   width: 100%; }
 
-.dropdown__list {
+.dropdown__list_name {
   list-style: none; }
-  .dropdown__list a {
-    font-size: 15px;
-    display: inline-block;
-    width: 100%;
-    padding: 9px 15px; }
+
+.dropdown__list {
+  list-style: none;
+  height: 35px; }
+
+.dropdown__anchor {
+  font-size: 15px;
+  display: block;
+  height: 100%;
+  position: relative; }
+
+.dropdown__containerlist_item {
+  height: 100%;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .dropdown__separator {
   height: 1px;
@@ -661,7 +694,7 @@ body {
   margin: 6px auto; }
 
 .dropdown__name {
-  padding: 9px 15px; }
+  padding: 10px 20px; }
   .dropdown__name span {
     display: block; }
   .dropdown__name .fullname {
@@ -670,7 +703,7 @@ body {
     margin-bottom: 3px; }
   .dropdown__name .username {
     font-size: 15px;
-    color: #969696; }
+    color: #888888; }
 
 .dropdown:before {
   content: " ";
@@ -690,18 +723,28 @@ body {
   right: 16px;
   bottom: 100%; }
 
-.navigation {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  background: #1c1c1c;
-  width: 200px;
-  -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5), 0px 2px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5), 0px 2px 1px rgba(0, 0, 0, 0.5);
-  left: -220px;
-  -webkit-transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  color: #e6e6e6; }
+.listItem__icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 12px; }
+
+.listItem__nightmode_switch {
+  width: 32px;
+  height: 13px;
+  margin-left: auto;
+  border-radius: 30px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .listItem__nightmode_switch .switch__controller {
+    margin-top: -4px;
+    width: 20px;
+    height: 20px;
+    background: #fbfbfb;
+    border-radius: 100%;
+    -webkit-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2), 1px 2px 2px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2), 1px 2px 2px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
 
 .loginForm__input:focus + .loginForm__underline > .coloredline {
   right: 0;
@@ -713,13 +756,13 @@ body {
   font-size: 11px; }
 
 .loginForm__placeholder-error {
-  color: #e61c2f; }
+  color: #e9272f; }
 
 .loginForm__underline-error {
-  background: #e61c2f;
+  background: #e9272f;
   height: 2px; }
   .loginForm__underline-error .coloredline {
-    background: #e61c2f; }
+    background: #e9272f; }
 
 .logo__text-isup {
   -webkit-transform: translateY(0);
@@ -730,12 +773,22 @@ body {
   display: inline-block; }
 
 .dropdown__list:hover:not(.listName) {
-  background: #005f27; }
+  background: #4b4b4b; }
 
-.dropdown__list:hover:not(.listName) a {
-  color: #fafafa; }
+.dropdown__list:active:not(.listName) {
+  background: #585858; }
 
 .navigation-show {
   left: 0; }
+
+.listItem__nightmode_switch-off {
+  background: #888888; }
+  .listItem__nightmode_switch-off .switch__controller {
+    margin-left: -2px; }
+
+.listItem__nightmode_switch-on {
+  background: #1a7727; }
+  .listItem__nightmode_switch-on .switch__controller {
+    margin-left: 14px; }
 
 /*# sourceMappingURL=style_nightmode.css.map */
