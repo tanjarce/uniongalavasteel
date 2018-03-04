@@ -2,7 +2,7 @@ $green: rgb(0, 95, 39);
 $red: rgb(230, 28, 47);
 
 $green: scale-color($green, 10%, 15%);
-$red: scale-color($red, 10%, 5%);
+// $red: scale-color($red, 10%, 5%);
 
 $body: rgb(17, 17, 17);
 $layout1: rgb(35, 35, 35);
@@ -11,8 +11,10 @@ $layout2: rgb(28, 28, 28);
 $color1: rgb(230, 230, 230);
 $color2: rgb(150, 150, 150);
 
-$hover: rgb(75, 75, 75);
-$active: lighten($hover, 5%);
+// $hover: rgb(75, 75, 75);
+// $active: lighten($hover, 5%);
+$hover: rgba(255, 255, 255, 0.05);
+$active: rgba(255, 255, 255, 0.07);
 
 
 $color-icon: rgb(136, 136, 136);

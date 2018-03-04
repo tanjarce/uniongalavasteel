@@ -5,7 +5,12 @@
 .ugs_green_icon{
     fill: $green;
 }
-
+.ugs_icon{
+    fill: $color-icon;
+}
+.menu_icon{
+    fill: $color1;
+}
 
 
 .header{
@@ -16,23 +21,36 @@
     align-items: center;
     padding: 0 20px;
     position: relative;
-    // background: pink;
     &__logo{
-        // background: lightblue;
         position: absolute;
-        width: 50px;
         left: 50%;
         margin-left: -30px;
-        // background: pink;
-    }
-    &__logoPic{
-            display: flex;
+        top: 50%;
+        margin-top: -10px;
+        @include media(769px){
+            // position: relative;
+            // left: 0;
+            // top: 0;
+            // margin: 0;
+            // margin-left: 25px;
+            // display: flex;
         }
-    &__logoText{
-        display: none;
+    }
+    // &__logoText{
+    //     display: none;
+    //     @include media(769px){
+    //         // margin: auto;
+    //         width: 160px;
+    //         height: 20px;
+    //         // display: inline-block;
+    //     }
+    // }
+    &__logoPic{
+        margin: auto;
+        width: 50px;
+        height: 20px;
     }
     &__user{
-        // background: coral;
         margin-left: auto;
         display: flex;
         span{
@@ -43,16 +61,18 @@
 
 .menu{
     height: 30px;
-    width: 20px;
-    // background: pink;
-    // align-items: center;
     display: flex;
     justify-content: center;
     flex-flow: column;
     cursor: pointer;
-    // &__lineContainer{
+    @include media(426px){
+        // display: none;
+    }
+    &__lineContainer{
         // background: lightblue;
-    // }
+        height: 20px;
+        width: 20px;
+    }
     &__line{
         // flex-wrap: wrap;
         background: $color1;
@@ -206,11 +226,33 @@
     &__unorderedlist{
         margin: 0;
         padding: 0;
+        // flex-wrap: wrap;
+    }
+    &__topList{
+        list-style: none;
+        height: 51px;
+        border-bottom: solid $border 1px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
     }
     &__togglebutton{
-        list-style: none;
-        height: 50px;
-        border-bottom: solid $border 1px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        @include media(426px){
+            display: none;
+        }
+    }
+    &__togglebuttonLabel{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        display: none;
+        @include media(426px){
+            display: block;
+        }
     }
     &__list{
         list-style: none;
@@ -225,6 +267,7 @@
         // padding: 9px 15px;
         position: relative;
         // background: coral;
+        cursor: pointer;
     }
 
     &__container_item{
@@ -233,14 +276,31 @@
         display: flex;
         align-items: center;
     }
+    &__pinside{
+        // align-items: flex-end;
+        // background: pink;
+        // margin-top: 100%;
+        display: none;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        border-top: solid $border 1px;
+        @include media(769px){
+            display: inline-block;
+        }
+    }
 }
 .mainnavItem{
     &__text{
-
+        font-size: 16px;
+        margin-left: 25px;
+        min-width: 100px; 
     }
     &__icon{
-        width: 24px;
-        height: 24px;
-        margin-right: 25px;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+
     }
 }

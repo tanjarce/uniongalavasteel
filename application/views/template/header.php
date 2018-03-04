@@ -11,7 +11,7 @@
         if($set_mode == 1){
             $mode = "_nightmode";
         }
-        if($set_mode == 0){
+        if($set_mode == 0 || $set_mode == null){
             $mode = "";
         }
     ?>

@@ -41,17 +41,39 @@
         background: $active;
     }
 }
-.mainnav__list{
-    &:hover{
-        background: $hover;
+
+.mainnav{
+    &__list{
+        &:hover{
+            background: $hover;
+        }
+        &:active{
+            background: $active;
+        }
     }
-    &:active{
-        background: $active;
+}
+
+.mainnavItem-active{
+    .mainnavItem__icon{
+        // width: 24px;
+        // height: 24px;
+        .ugs_icon{
+            fill: $green;
+        }
+    }
+    .mainnavItem__text{
+        font-weight: bold;
     }
 }
 
 .navigation-show{
     left: 0;
+}
+.navigation-hide{
+    left: -220px;
+}
+.navigation-showlabel{
+    width: 200px;
 }
 
 .listItem__nightmode_switch-off{
