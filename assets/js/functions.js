@@ -44,12 +44,7 @@ $(document).ready(()=>{
     $("#mainNav_toggleLabel").outclick(()=>{
         $(".navigation").removeClass("navigation-showlabel");
     })
-    $(".mainnav__anchor").click((e)=>{
-        e.preventDefault();
-
-    })
-
-
+    
     $("#nightmode_toggle").click((e)=>{
         e.preventDefault();
         const link = $('link[id="theme"]');
@@ -78,9 +73,16 @@ $(document).ready(()=>{
                 // console.log(data);
             },
             error: function(xhr, textStatus, errorThrown){
-                alert('request failed');
+                window.location.reload(true);
             }
         });
     }
 
+    
+    $(".mainnav__anchor").click(function(e){
+        e.preventDefault();
+        $(".mainnav__container_item").removeClass("mainnavItem-active");
+        $(this).find('.mainnavItem').addClass("mainnavItem-active");
+
+    })
 })

@@ -1,21 +1,7 @@
-<div class="nav">
-    <a class="logo" href="<?php echo base_url(); ?>">
-        <span class="logo-icon"></span>
-        <span class="logo-text"></span>
-    </a>
-    <div class="menu">
-        <div class="bar one"></div>
-        <div class="bar two"></div>
-        <div class="bar three"></div>
-    </div>
-    <div class="main-nav">
-        <a class="active" href="<?php echo base_url(); ?>Employee">Employee</a>
-        <a href="<?php echo base_url(); ?>Setup">Setting</a>
-        <a href="<?php echo base_url(); ?>login/logout" class="user_logout">Logout</a>
-    </div>
+<div class="main">
+  <h1>Employee view</h1>
 </div>
-
-<div class="table_wrapper">
+<!-- <div class="table_wrapper">
   <table id="main_table" class="tools_table display nowrap" cellspacing="0" width="100%">
     <thead>
       <tr>
@@ -120,6 +106,6 @@
   }
   ?>
   <?php } ?>
-<?php } ?>
+<?php } ?> -->
 
 
