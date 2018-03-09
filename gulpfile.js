@@ -16,6 +16,7 @@ gulp.task('serve', ['sass'], () => {
 
     gulp.watch(['assets/scss/**/*.scss'], ['sass'])
     gulp.watch('application/**/**/*').on('change', browserSync.reload)
+    gulp.watch('assets/js/**/*.js').on('change', browserSync.reload)
 })
 
 

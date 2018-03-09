@@ -1,0 +1,52 @@
+@import '_variables';
+@import '_state';
+
+// for the the color of the icons
+.ugs_red_icon{
+    fill: $red;
+}
+.ugs_green_icon{
+    fill: $green;
+}
+.ugs_icon{
+    fill: $color-icon;
+}
+.menu_icon{
+    fill: $color1;
+}
+
+*{
+    color: $color1;
+}
+
+body{
+    background: $body;
+}
+.head{
+    background: $layout1;
+}
+.dropdown{
+    background: $layout1;
+    box-shadow:  2px 3px 15px $shadow, 1px 2px 2px $shadow; 
+    &__name{
+        .username{
+            color: $color-icon;
+        }
+    }
+    &:before{
+        border-bottom: 10px solid $shadow;
+    }
+    &:after{
+        border-bottom: 9px solid $layout1;
+    }
+}
+.navigation{
+    background: $layout2;
+}
+.listItem{
+    &__nightmode_switch{
+        .switch__controller{
+            box-shadow: 2px 3px 3px $shadow2, 1px 2px 2px $shadow2, 0px 0px 10px $shadow2, 0px 0px 5px $shadow2;
+        }
+    }
+}

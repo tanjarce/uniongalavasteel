@@ -1,23 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css"> -->
-    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.dataTables.min.css"> -->
-    <?php 
-        $set_mode = $this->session->userdata('mode'); 
-        if($set_mode == 1){
-            $mode = "_nightmode";
-        }
-        if($set_mode == 0 || $set_mode == null){
-            $mode = "";
-        }
-    ?>
+<?php
+    //  echo $this->session->userdata('role_id');
+    //  echo $this->session->userdata('emp_id');
+    $username = $this->session->userdata('user_name');
+    $firstname = $this->session->userdata('emp_firstName');
+    $lastname = $this->session->userdata('emp_lastName');
+    $fullname = $firstname . " " . $lastname; 
 
-    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/style' . $mode .'.css'?>" nm="<?php echo $set_mode?>">
-    <link rel="shortcut icon" href="<?php echo base_url()?>assets/favicon.png" type="image/x-icon">
-    <title>UnionGalvasteel</title>
-</head>
-<body>
+    $set_mode = $this->session->userdata('mode'); 
+    if($set_mode == 1){
+        $switch = "listItem__nightmode_switch-on";
+    }
+    if($set_mode == 0){
+        $switch = "listItem__nightmode_switch-off";
+    }
+?>
+
+<div class="head">
+    <div class="header">
+        <div class="header__menu menu">
+            <div class="menu__lineContainer">
+                <svg viewBox="0 0 24 24" style="height: 100%; width: 100%">
+                    <g>
+                        <path d="m1.071 19.501h21.858v-2.429h-21.858v2.429zm0-6.287h21.858v-2.428h-21.858v2.428zm0-8.715v2.429h21.858v-2.429h-21.858z" class="menu_icon"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+       
+        <div class="header__logo">
+            <div class="header__logoPic">
+                <svg viewBox="0 0 50 20" style="height: 100%; width: 100%">
+                    <g>
+                        <path d="m12.633 0.479-6.174 19.042h-4l6.175-19.042h3.999zm4.97 0-6.175 19.042h-3.898l6.191-19.042h3.882zm4.97 0-6.175 19.042h-3.898l6.191-19.042h3.882zm4.953 0-6.158 19.042h-3.899l6.191-19.042h3.866z" class="ugs_red_icon"/>
+                        <path d="m47.539 0.479-6.191 19.042h-18.926l6.192-19.042h18.925z" class="ugs_green_icon"/>
+                    </g>
+                </svg>
+            </div>
+            <!-- <div class="header__logoText">
+                <svg viewBox="0 0 240.66 20" style="height: 100%; width: 100%">
+                    <g fill-rule="evenodd">
+                        <path d="m0 0.012h3.371v14.538q0.555 2.237 2.374 2.237t7.739 0v-16.775h3.371v17.698q-0.418 2.266-3.371 2.266-2.952 0-7.5 0-5.984-0.463-5.984-5.426t0-14.538zm20.279 19.964v-17.592q0.549-2.419 3.348-2.372t5.219 0q8.018-0.285 8.018 6.215t0 13.749h-3.369v-13.844q0.095-3.131-2.419-3.131-2.515 0-7.449 0v16.975h-3.348zm47.03 0.012v-17.592q0.548-2.42 3.348-2.372 2.799 0.047 5.218 0 8.018-0.285 8.018 6.215t0 13.749h-3.368v-13.844q0.095-3.131-2.42-3.131-2.514 0-7.448 0v16.975h-3.348zm-26.744-19.976h3.034v19.964h-3.034v-19.964zm6.686 6.405q0.45-6.405 5.731-6.405t5.169 0q5.45 0.787 5.45 6.405t0 6.967q0.224 6.592-6.349 6.592-6.574 0-4.888 0-5.113-1.142-5.113-6.592t0-6.967zm3.259 7.304v-8.147q0.168-2.562 2.697-2.573 2.528-0.011 4.944 0 2.247 0.326 2.247 2.573 0 2.248 0 8.147 0.337 3.066-2.809 3.066t-4.326 0q-2.753-0.088-2.753-3.066z" class="ugs_icon"/>
+                        <path d="m100.35 2.384v-2.36h-9.18q-4.201 0.3-4.201 6.108t0 8.418q-0.052 5.426 4.201 5.426t6.276 0.012q4.097-0.528 4.097-4.677t0-6.69h-7.417v2.334h5.135v4.045q0.207 2.71-2.697 2.71t-5.394 0q-1.711-0.272-1.711-1.984 0-1.711 0-11.721 0.311-1.609 2.437-1.609 2.127 0 8.454-0.012zm1.193 17.592 6.327-17.58q0.882-2.384 1.971-2.384t3.734 0.012l7.261 19.964-2.749-0.012-2.075-5.426h-10.009l-1.815 5.438-2.645-0.012zm5.393-7.725 3.371-9.855h1.401l3.423 9.855h-8.195zm38.043 7.737 6.328-17.58q0.881-2.384 1.97-2.384t3.734 0.012l7.261 19.964-2.749-0.012-2.074-5.426h-10.01l-1.815 5.438-2.645-0.012zm5.394-7.725 3.371-9.855h1.4l3.423 9.855h-8.194zm-29.537-12.251 2.748 0.012v14.526q-0.311 3.16 2.438 3.16t7.987 0v2.266h-8.091q-5.082-0.016-5.082-5.426t0-14.538zm106.64 0.024 2.749 0.012v14.526q-0.312 3.16 2.437 3.16t7.987 0v2.266h-8.091q-5.082-0.016-5.082-5.426t0-14.538zm-96.06-0.024 2.59 0.012 5.673 16.206 5.789-16.206h2.828l-7.114 19.964h-2.829l-6.937-19.976zm47.749 0v2.396l-7.978-0.024q-3.315-0.228-3.315 1.621 0 1.85 0 1.569-0.113 1.686 0.786 2.023t8.54 2.697q2.697 0.737 2.697 1.969 0 1.233 0 3.143-0.674 4.57-4.326 4.57t-9.945 0v-2.266h10.675q1.405-0.397 1.405-3.148 0.143-2.016-0.936-2.299-1.08-0.282-8.896-2.808-2.248-0.615-2.248-3.038t0-2.727q0.734-3.678 3.882-3.678 3.147 0 9.659 0zm2.398 0v2.396l6.07-0.012v17.604h2.186v-17.592h6.135v-2.372l-14.391-0.024zm28.835 0v2.396h-8.218q-2.849-0.202-2.849 2.614 0 2.815 0 3.896h9.987v2.037h-9.987v4.045q0.016 2.71 2.595 2.71t8.472 0v2.266h-8.644q-4.747-0.548-4.747-5.426 0-4.879 0-8.976-0.107-5.562 5.627-5.562t7.764 0zm15.25 0.024v2.396h-8.219q-2.848-0.202-2.848 2.613 0 2.816 0 3.897h9.986v2.037h-9.986v4.045q0.016 2.71 2.594 2.71 2.579 0 8.473 0v2.266h-8.644q-4.748-0.548-4.748-5.426 0-4.879 0-8.976-0.106-5.562 5.628-5.562t7.764 0z" class="ugs_green_icon"/>
+                    </g>
+                </svg>
+            </div> -->
+        </div>
+        <div class="header__user user">
+            <div class="user__avatar"></div>
+            <div class="user__dropdown dropdown">
+                <ul class="dropdown__unorderedlist">
+                    <li class="dropdown__list_name">
+                        <div class="dropdown__name">
+                            <span class="fullname"><?php echo $fullname?></span>
+                            <span class="username">@<?php echo $username ?></span>
+                        </div>
+                    </li>
+                    <li class="dropdown__separator"></li>
+                    <li class="dropdown__list">
+                        <a class="dropdown__anchor"href="#">
+                            <div class="dropdown__containerlist_item listItem">
+                                <div class="listItem__icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <g>
+                                            <path d="m20.921 13.176c0.048-0.384 0.084-0.768 0.084-1.176s-0.036-0.792-0.084-1.176l2.52-1.98c0.24-0.18 0.3-0.504 0.156-0.768l-2.4-4.152c-0.144-0.264-0.48-0.36-0.72-0.264l-3 1.2c-0.624-0.48-1.296-0.876-2.04-1.176l-0.444-3.18c-0.072-0.288-0.324-0.504-0.6-0.504h-4.8c-0.324 0-0.576 0.216-0.6 0.504l-0.48 3.18c-0.72 0.3-1.404 0.72-2.04 1.176l-2.976-1.2c-0.276-0.12-0.6 0-0.72 0.264l-2.4 4.152c-0.168 0.264-0.096 0.6 0.12 0.768l2.544 1.98c-0.048 0.384-0.084 0.78-0.084 1.176s0.024 0.792 0.072 1.176l-2.52 1.98c-0.24 0.18-0.3 0.504-0.156 0.768l2.4 4.152c0.144 0.264 0.48 0.36 0.72 0.264l3-1.2c0.624 0.48 1.296 0.876 2.04 1.176l0.444 3.18c0.048 0.288 0.3 0.504 0.6 0.504h4.8c0.3 0 0.552-0.216 0.6-0.504l0.444-3.18c0.72-0.3 1.404-0.72 2.04-1.176l2.976 1.2c0.276 0.12 0.6 0 0.72-0.264l2.4-4.152c0.156-0.264 0.096-0.6-0.12-0.768l-2.544-1.98h0.048zm-8.916 3.024c-2.316 0-4.2-1.884-4.2-4.2s1.884-4.2 4.2-4.2 4.2 1.884 4.2 4.2-1.884 4.2-4.2 4.2z" class="ugs_icon"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="listItem__string">Account Settings</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dropdown__list">
+                        <a class="dropdown__anchor"href="<?php echo base_url(); ?>login/logout">
+                            <div class="dropdown__containerlist_item listItem">
+                                <div class="listItem__icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <g>
+                                            <path d="m9.453 16.787 1.88 1.88 6.667-6.667-6.667-6.667-1.88 1.88 3.44 3.454h-12.893v2.666h12.893l-3.44 3.454zm11.88-16.787h-18.666c-1.48 0-2.667 1.2-2.667 2.667v5.333h2.667v-5.333h18.666v18.666h-18.666v-5.333h-2.667v5.333c0 1.467 1.187 2.667 2.667 2.667h18.666c1.467 0 2.667-1.2 2.667-2.667v-18.666c0-1.467-1.2-2.667-2.667-2.667z" class="ugs_icon"/>
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                <div class="listItem__string">Log out</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dropdown__separator"></li>
+                    <li class="dropdown__list">
+                        <span id="nightmode_toggle" class="dropdown__anchor" href="#">
+                            <div class="dropdown__containerlist_item listItem">
+                                <div class="listItem__icon">
+                                    <svg viewBox="0 0 24 24" height="100%" width="100%">
+                                        <g>
+                                            <path d="m14.759 0.258c-0.784-0.173-1.599-0.258-2.434-0.258-6.623 0-12 5.377-12 12s5.377 12 12 12c5.262 0 9.737-3.394 11.35-8.111-1.293 0.705-2.774 1.111-4.35 1.111-4.967 0-9-4.033-9-9 0-3.298 1.778-6.184 4.434-7.742z" class="ugs_icon"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="listItem__string">Night mode</div>
+                                <div id="nightmode-switch" class="listItem__nightmode_switch <?php echo $switch?>">
+                                    <div class="switch__controller"></div>
+                                </div>     
+                            </div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <!-- <span></span> -->
+        </div>
+    </div>
+</div>
