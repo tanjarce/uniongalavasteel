@@ -437,13 +437,12 @@ p {
 
 .main {
   margin-top: 50px;
-  padding: 20px; }
+  padding: 20px;
+  -webkit-transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1); }
   @media only screen and (min-width: 426px) {
     .main {
       margin-left: 60px; } }
-  @media only screen and (min-width: 769px) {
-    .main {
-      margin-left: 200px; } }
 
 .head {
   -webkit-box-sizing: border-box;
@@ -471,14 +470,8 @@ p {
               box-shadow: none;
       left: 0;
       overflow: hidden;
-      width: 60px; } }
-  @media only screen and (min-width: 769px) {
-    .navigation {
-      -webkit-box-shadow: none;
-              box-shadow: none;
-      left: 0;
-      overflow: hidden;
-      width: 200px; } }
+      width: 60px;
+      z-index: 2; } }
 
 .withbackgroundimage {
   background: url("../images/pattern-geo.jpg") center;

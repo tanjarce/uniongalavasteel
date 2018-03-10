@@ -1,12 +1,13 @@
 .main{
     margin-top: 50px;
     padding: 20px;
+    transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
     @include media(426px){
         margin-left: 60px;
     }
-    @include media(769px){
-        margin-left: 200px;
-    }
+    // @include media(769px){
+    //     margin-left: 200px;
+    // }
 }
 
 .head{
@@ -34,12 +35,13 @@
         left: 0;
         overflow: hidden;
         width: 60px;
+        z-index: 2;
     }
-    @include media(769px){
-        box-shadow: none;
-        left: 0;
-        overflow: hidden;
-        width: 200px;
-        // z-index: -1;
-    }
+    // @include media(769px){
+    //     box-shadow: none;
+    //     left: 0;
+    //     overflow: hidden;
+    //     width: 200px;
+    //     // z-index: -1;
+    // }
 }

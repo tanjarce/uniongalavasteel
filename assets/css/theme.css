@@ -61,6 +61,12 @@
   .listItem__nightmode_switch-on .switch__controller {
     margin-left: 14px; }
 
+.main-full {
+  margin-left: 0; }
+
+.main-slide {
+  margin-left: 200px; }
+
 .ugs_red_icon {
   fill: #e61c2f; }
 

@@ -4,12 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Employee extends CI_Controller {
 
   public function index() {
-    if ($this->session->userdata('role_id') != '') {
+    $data = array('active' => 'employees');
+    if ($this->session->userdata('role_id') != '') {  
       $this->load->model('Employee_model', 'model');
       $data['fetch_employee'] = $this->model->fetch_employee();
       $this->load->view('template/head');
       $this->load->view('template/header');
-      $this->load->view('template/navigation');
+      $this->load->view('template/navigation', $data);
       $this->load->view('Employee_view', $data);
       $this->load->view('template/footer');
       

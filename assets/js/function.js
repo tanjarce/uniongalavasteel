@@ -18,24 +18,21 @@ $(document).ready(()=>{
     
     // menu sa header toggle
     $(".header__menu").click(()=>{
-        $(".navigation").removeClass("navigation-show")
-        $(".navigation").removeClass("navigation-pinside");
-        let position = $(".navigation").css("left");
-        if(position === "0px"){
-            $(".navigation").addClass("navigation-hide").remove("navigation-show");
-        }
-        else{
-            $(".navigation").addClass("navigation-show").removeClass("navigation-hide");
-        }
+        $(".navigation").toggleClass("navigation-show")
     })
     // tago pag pindot sa labas
     $(".navigation").outclick(()=>{
         $(".navigation").removeClass("navigation-show");
     })
+
     // eto yung nasa nav na pangtago ng nav
     $("#mainNav_toggle").click(()=>{
         $(".navigation").removeClass("navigation-show");
     });
+    $("#mainNav_toggle").outclick(()=>{
+        $(".navigation").removeClass("navigation-show");
+    });
+
     // toggle label
     $("#mainNav_toggleLabel").click(()=>{
         $(".navigation").toggleClass("navigation-showlabel");
@@ -78,11 +75,10 @@ $(document).ready(()=>{
         });
     }
 
-    
+
     $(".mainnav__anchor").click(function(e){
         e.preventDefault();
         $(".mainnav__container_item").removeClass("mainnavItem-active");
         $(this).find('.mainnavItem').addClass("mainnavItem-active");
-
     })
 })

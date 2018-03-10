@@ -1,0 +1,96 @@
+.loginForm{
+    &__input:focus + .loginForm__underline > .coloredline{
+        right: 0;
+        left: 0;
+    }
+
+    &__placeholder-isup{
+        transform: translateY(-20px);
+        font-size: 11px;
+     }
+    &__placeholder-error{
+        color: $red;
+    }
+    &__underline-error{
+            background: $red;
+            height: 2px;
+        .coloredline{
+            background: $red;
+        }
+    }
+}
+
+
+.logo__text-isup{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.dropdown-show{
+    display: inline-block;
+}
+
+.dropdown__list{
+    &:hover:not(.listName){
+        background: $hover;
+    }
+    &:active:not(.listName){
+        background: $active;
+    }
+}
+
+.mainnav{
+    &__list{
+        &:hover{
+            background: $hover;
+        }
+        &:active{
+            background: $active;
+        }
+    }
+}
+
+.mainnavItem-active{
+    .mainnavItem__icon{
+        // width: 24px;
+        // height: 24px;
+        .ugs_icon{
+            fill: $green;
+        }
+    }
+    .mainnavItem__text{
+        font-weight: 600;
+    }
+}   
+
+.navigation-show{
+    left: 0;
+}
+.navigation-hide{
+    left: -220px;
+}
+.navigation-showlabel{
+    width: 200px;
+}
+
+.listItem__nightmode_switch-off{
+    background: $color-icon;
+    .switch__controller{
+        margin-left: -2px;
+
+    }
+}
+.listItem__nightmode_switch-on{
+    background: $green;
+    .switch__controller{
+        margin-left: 14px;
+    }
+}
+
+.main-full{
+    margin-left: 0;
+}
+.main-slide{
+    margin-left: 200px;
+}

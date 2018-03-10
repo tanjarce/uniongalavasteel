@@ -19,7 +19,7 @@
             </li>    
             <li class="mainnav__list">
                 <a class="mainnav__anchor" href="#">
-                    <div class="mainnav__container_item mainnavItem mainnavItem-active">
+                    <div class="mainnav__container_item mainnavItem<?php if($active=="payroll")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
                                 <g>
@@ -33,7 +33,7 @@
             </li>
             <li class="mainnav__list">
                 <a class="mainnav__anchor" href="#">
-                    <div class="mainnav__container_item mainnavItem">
+                    <div class="mainnav__container_item mainnavItem<?php if($active=="timesheet")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
                                 <g>
@@ -47,7 +47,7 @@
             </li>
             <li class="mainnav__list">
                 <a class="mainnav__anchor" href="<?php echo base_url(); ?>Employee">
-                    <div class="mainnav__container_item mainnavItem">
+                    <div class="mainnav__container_item mainnavItem<?php if($active=="employees")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
                                 <g>
@@ -61,7 +61,7 @@
             </li>
             <li class="mainnav__list">
                 <a class="mainnav__anchor" href="<?php echo base_url(); ?>Setup">
-                    <div class="mainnav__container_item mainnavItem">
+                    <div class="mainnav__container_item mainnavItem<?php if($active=="setup")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
                                 <g>
