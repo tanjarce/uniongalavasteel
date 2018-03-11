@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Employee extends CI_Controller {
 
   public function index() {
-    $data = array('active' => 'employees');
+    $data = array('active' => 'employee');
+
     if ($this->session->userdata('role_id') != '') {  
       $this->load->model('Employee_model', 'model');
       $data['fetch_employee'] = $this->model->fetch_employee();
@@ -13,9 +14,22 @@ class Employee extends CI_Controller {
       $this->load->view('template/navigation', $data);
       $this->load->view('Employee_view', $data);
       $this->load->view('template/footer');
-      
     } else {
       redirect(base_url().'Login_view');
+    }
+  }
+  public function employee_view(){
+    if(! $this->input->is_ajax_request()) {
+      redirect('404');
+    }
+    else{
+      if ($this->session->userdata('role_id') != '') {  
+        $this->load->model('Employee_model', 'model');
+        $data['fetch_employee'] = $this->model->fetch_employee();
+        $this->load->view('Employee_view', $data);
+      } else {
+        redirect(base_url().'Login_view');
+      }
     }
   }
 

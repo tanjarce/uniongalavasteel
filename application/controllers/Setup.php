@@ -11,6 +11,14 @@ class Setup extends CI_Controller {
     $this->load->view('Setup_view');
     $this->load->view('template/footer');
   }
+  public function setup_view(){
+    // if(! $this->input->is_ajax_request()) {
+    //   redirect('404');
+    // }
+    // else{
+      $this->load->view('Setup_view');
+    // }
+  }
 
   public function flashdata($err_name, $name) {
     $a = $this->input->post($name);

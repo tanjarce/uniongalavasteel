@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main__content">
 
     <h1>Setup view</h1>
     <!-- <a href="<?php echo base_url(); ?>Setup/department">Department</a>

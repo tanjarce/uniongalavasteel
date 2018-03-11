@@ -18,7 +18,7 @@
                 </div>
             </li>    
             <li class="mainnav__list">
-                <a class="mainnav__anchor" href="#">
+                <a class="mainnav__anchor" id="main" href="<?php echo base_url(); ?>">
                     <div class="mainnav__container_item mainnavItem<?php if($active=="payroll")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="mainnav__list">
-                <a class="mainnav__anchor" href="#">
+                <a class="mainnav__anchor" id="timesheet" href="<?php echo base_url(); ?>Timesheet">
                     <div class="mainnav__container_item mainnavItem<?php if($active=="timesheet")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
@@ -46,8 +46,8 @@
                 </a>
             </li>
             <li class="mainnav__list">
-                <a class="mainnav__anchor" href="<?php echo base_url(); ?>Employee">
-                    <div class="mainnav__container_item mainnavItem<?php if($active=="employees")echo" mainnavItem-active";?>">
+                <a class="mainnav__anchor" id="employee" href="<?php echo base_url(); ?>Employee">
+                    <div class="mainnav__container_item mainnavItem<?php if($active=="employee")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
                                 <g>
@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li class="mainnav__list">
-                <a class="mainnav__anchor" href="<?php echo base_url(); ?>Setup">
+                <a class="mainnav__anchor" id="setup" href="<?php echo base_url(); ?>Setup">
                     <div class="mainnav__container_item mainnavItem<?php if($active=="setup")echo" mainnavItem-active";?>">
                         <div class="mainnavItem__icon">
                             <svg viewBox="0 0 24 24">
@@ -90,3 +90,4 @@
         </ul>
     </div>
 </div>
+<div class="main" id="main">

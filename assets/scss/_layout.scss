@@ -5,11 +5,7 @@
     @include media(426px){
         margin-left: 60px;
     }
-    // @include media(769px){
-    //     margin-left: 200px;
-    // }
 }
-
 .head{
     box-sizing: border-box;
     position: fixed;
@@ -37,11 +33,4 @@
         width: 60px;
         z-index: 2;
     }
-    // @include media(769px){
-    //     box-shadow: none;
-    //     left: 0;
-    //     overflow: hidden;
-    //     width: 200px;
-    //     // z-index: -1;
-    // }
 }

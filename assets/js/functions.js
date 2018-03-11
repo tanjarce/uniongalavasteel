@@ -43,7 +43,6 @@ $(document).ready(()=>{
     })
     
     $("#nightmode_toggle").click((e)=>{
-        e.preventDefault();
         const link = $('link[id="theme"]');
         if(link.attr('nm') === "1"){
             link.attr('href', base_url()+"/assets/css/theme.css");
@@ -52,7 +51,7 @@ $(document).ready(()=>{
             $("#nightmode-switch").removeClass("listItem__nightmode_switch-on").addClass("listItem__nightmode_switch-off");
             // $("#switch-controller").removeClass("switch__controller-right").addClass("switch__controller-left");
         }
-        else if(link.attr('nm') === "0"){
+        else{
             link.attr('href', base_url()+"/assets/css/theme-dark.css");
             link.attr('nm', "1");
             pass_mode(1);
@@ -62,6 +61,7 @@ $(document).ready(()=>{
     
     })
     function pass_mode(set_mode){
+
         $.ajax({
             type: 'POST',
             url: base_url() + "/main/set_mode",
@@ -74,11 +74,4 @@ $(document).ready(()=>{
             }
         });
     }
-
-
-    $(".mainnav__anchor").click(function(e){
-        e.preventDefault();
-        $(".mainnav__container_item").removeClass("mainnavItem-active");
-        $(this).find('.mainnavItem').addClass("mainnavItem-active");
-    })
 })

@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main__content">
   <h1>Employee view</h1>
 </div>
 <!-- <div class="table_wrapper">

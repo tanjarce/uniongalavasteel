@@ -9,12 +9,21 @@ class Main extends CI_Controller {
             $this->load->view('template/head');
             $this->load->view('template/header');
             $this->load->view('template/navigation', $data);
-            $this->load->view('payroll_view');
+            $this->load->view('Payroll_view');
             $this->load->view('template/footer');
         }
         else {
             redirect(base_url().'login');
         }
+    }
+
+    public function main_view(){
+        // if(! $this->input->is_ajax_request()) {
+        //   redirect('404');
+        // }
+        // else{
+          $this->load->view('Payroll_view');
+        // }
     }
 
     
