@@ -5,19 +5,16 @@ class Setup extends CI_Controller {
 
   public function index() {
     $data = array('active' => 'setup');
-    $this->load->view('template/head');
-    $this->load->view('template/header');
-    $this->load->view('template/navigation', $data);
-    $this->load->view('Setup_view');
-    $this->load->view('template/footer');
-  }
-  public function setup_view(){
-    // if(! $this->input->is_ajax_request()) {
-    //   redirect('404');
-    // }
-    // else{
+    if(! $this->input->is_ajax_request()) {
+      $this->load->view('template/head');
+      $this->load->view('template/header');
+      $this->load->view('template/navigation', $data);
       $this->load->view('Setup_view');
-    // }
+      $this->load->view('template/footer');
+    }
+    else{
+      $this->load->view('Setup_view');
+    }
   }
 
   public function flashdata($err_name, $name) {

@@ -5,25 +5,21 @@ class Main extends CI_Controller {
 	public function index() {
         $data = array('active' => 'payroll');
         
-        if ($this->session->userdata('role_id') != NULL) {
-            $this->load->view('template/head');
-            $this->load->view('template/header');
-            $this->load->view('template/navigation', $data);
+        if(! $this->input->is_ajax_request()) {
+            if ($this->session->userdata('role_id') != NULL) {
+                $this->load->view('template/head');
+                $this->load->view('template/header');
+                $this->load->view('template/navigation', $data);
+                $this->load->view('Payroll_view');
+                $this->load->view('template/footer');
+            }
+            else {
+                redirect(base_url().'login');
+            }
+        }
+        else{
             $this->load->view('Payroll_view');
-            $this->load->view('template/footer');
         }
-        else {
-            redirect(base_url().'login');
-        }
-    }
-
-    public function main_view(){
-        // if(! $this->input->is_ajax_request()) {
-        //   redirect('404');
-        // }
-        // else{
-          $this->load->view('Payroll_view');
-        // }
     }
 
     

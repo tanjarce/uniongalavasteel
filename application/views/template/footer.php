@@ -4,51 +4,31 @@
 <script src="<?php echo base_url() ?>assets/js/functions.js"></script> 
 <script src="<?php echo base_url() ?>assets/js/jquery.pjax.js"></script> 
 <script>
-    // $(".mainnav__anchor").click(function(e){
-    //     e.preventDefault();
-    //     const page = $(this).attr("id");
-    //     const href = $(this).attr("href");
-    //     $(".mainnav__container_item").removeClass("mainnavItem-active");
-    //     $(this).find('.mainnavItem').addClass("mainnavItem-active");
-    //     // console.log(href + " " + page);
-    //     history.pushState(page, null, href);
-        
-    //     // console.log(base_url() + "/"+ page +"/"+ page +"_view")
-    //     getpage(page);
-    // })
-
-    // function getpage(p){
-    //     $.ajax({
-    //         type: "GET",
-    //         url: base_url() + "/"+ p +"/"+ p +"_view",
-    //         success: function(data){
-    //             $(".main").html(data);
-    //         },
-    //         error: function(xhr, textStatus, errorThrown){
-    //             window.location.reload(true);
-    //         }
-    //     })
-    // }
-
-    // window.addEventListener('popstate', function(e) {
-    //     // console.log(e.state);
-    //     var page = e.state;
-
-    //     if (page == null) {
-    //         // removeCurrentClass();
-    //         // textWrapper.innerHTML = " ";
-    //         // content.innerHTML = " ";
-    //         // document.title = defaultTitle;
-    //     } else {
-    //         // updateText(character);
-    //         getpage(page);
-    //         // addCurrentClass(character);
-    //         // document.title = "Ghostbuster | " + character;
-
-    //     }
-    // });
-
-
+$(document).ready(function(){
+    if ($.support.pjax) {
+        // console.log('pjax active')
+        $(document).pjax('[mainnav] a, a[mainnav]', '#maincontainer', {
+            "target": $(document).on('pjax:send', function() { 
+                NProgress.configure({ minimum: 0.1 });
+                NProgress.configure({ showSpinner: false });
+                NProgress.start(); 
+            }),
+            "target": $(document).on('pjax:complete', function() { NProgress.done(); }),
+            "target":  $(document).on('pjax:timeout', function(event) { event.preventDefault(); }),
+            "target": $(document).on('pjax:end', function(){  
+                var link = window.location.pathname.split("/").pop();
+                if ( link == '' ) {
+                    link = 'Main';
+                }
+                // alert("#"+link+"-mainnav")
+                var target = $("#"+link+"-mainnav");
+                // Add active class to target link
+                $(".mainnav__container_item").removeClass("mainnavItem-active");
+                target.find('.mainnavItem').addClass('mainnavItem-active');
+            }),
+        })
+    }
+});
 </script>
 </body>
 </html>

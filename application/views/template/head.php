@@ -18,6 +18,7 @@
     ?>
     <link id="theme" rel="stylesheet" href="<?php echo base_url() . 'assets/css/' . $mode .'.css'?>" nm="<?php echo $set_mode?>">
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/favicon.png" type="image/x-icon">
+    <script src='assets/js/nprogress.js'></script>
     <title>UnionGalvasteel</title>
 </head>
 <body>
