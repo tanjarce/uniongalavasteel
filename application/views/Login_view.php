@@ -41,7 +41,7 @@
             </div>
             
             
-            <form class='login_loginForm loginForm' error='<?php echo $this->session->flashdata('error');?>' method="post">
+            <form class='login_loginForm loginForm' error='<?php echo $this->session->flashdata('error');?>' action="<?php echo base_url().'login/login_validation'?>" method="post">
                 <div class="loginForm__headtext">
                     <h1 class="loginForm__h1">Sign in</h1>
                     <p class="loginForm__p">to your account</p>
@@ -65,7 +65,6 @@
             </form>
         </div>
     <script src="<?php echo base_url() ?>assets/js/jquery.js"></script> 
-    <script src="<?php echo base_url() ?>assets/js/nprogress.js"></script>
     <script src="<?php echo base_url() ?>assets/js/login_script.js"></script>
   </body>
 </html>

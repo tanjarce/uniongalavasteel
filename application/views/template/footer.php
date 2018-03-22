@@ -8,12 +8,17 @@ $(document).ready(function(){
     if ($.support.pjax) {
         // console.log('pjax active')
         $(document).pjax('[mainnav] a, a[mainnav]', '#maincontainer', {
-            "target": $(document).on('pjax:send', function() { 
-                NProgress.configure({ minimum: 0.1 });
+            "target": $(document).on('pjax:send', function() {
+                NProgress.configure({ minimum: 0.7 });
                 NProgress.configure({ showSpinner: false });
+                NProgress.configure({ easing: 'ease', speed: 2000 });
+                // NProgress.configure({ trickleSpeed: 100 });
                 NProgress.start(); 
+                NProgress.configure({ easing: 'ease', speed: 100 });
             }),
-            "target": $(document).on('pjax:complete', function() { NProgress.done(); }),
+            "target": $(document).on('pjax:complete', function() { 
+                NProgress.done(); 
+            }),
             "target":  $(document).on('pjax:timeout', function(event) { event.preventDefault(); }),
             "target": $(document).on('pjax:end', function(){  
                 var link = window.location.pathname.split("/").pop();

@@ -53,7 +53,7 @@ class Login extends CI_Controller {
 			'mode' => $data['user_data']['night_mode']
 		);
 		$this->session->set_userdata($create_session);
-
+		
 	}
 					
 	public function logout(){

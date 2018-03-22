@@ -69,12 +69,17 @@
 
 /* Make clicks pass-through */
 #nprogress {
-  pointer-events: none; }
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8); }
 
 #nprogress .bar {
-  background: #005f27;
+  background: #006128;
   position: fixed;
-  z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
@@ -88,11 +93,12 @@
   width: 100px;
   height: 100%;
   -webkit-box-shadow: 0 0 10px #005f27, 0 0 5px #005f27;
-          box-shadow: 0 0 10px #005f27, 0 0 5px #005f27;
+  box-shadow: 0 0 10px #005f27, 0 0 5px #005f27;
   opacity: 1.0;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
-          transform: rotate(3deg) translate(0px, -4px); }
+  transform: rotate(3deg) translate(0px, -4px); }
 
+/*# sourceMappingURL=login_style.css.map */
 .ugs_red_icon {
   fill: #e61c2f; }
 
