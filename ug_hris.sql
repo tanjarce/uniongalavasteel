@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.8
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2017 at 08:33 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost
+-- Generation Time: Mar 16, 2018 at 11:13 AM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -99,7 +101,7 @@ INSERT INTO `ug_r_records` (`rec_id`, `emp_id`, `rec_sender`, `rec_subject`, `re
 (1, 1, 8, 'Absent', 'Dear Scarlett, \r\nThis woman leave the department without a permission from the admin.\r\n                                      ', '2017-11-21', 1),
 (2, 4, 8, 'Promotion', 'Cool Kidney, Sweaty heart      ', '2017-11-22', 1),
 (3, 8, 8, 'Sunction', 'You just broke the most expensive machine in the company.\r\n  ', '2017-11-17', 1),
-(4, 3, 8, 'Asdfgh', '        jghfhghjkl;''', '2015-12-30', 1);
+(4, 3, 8, 'Asdfgh', '        jghfhghjkl;\'', '2015-12-30', 1);
 
 -- --------------------------------------------------------
 
@@ -110,19 +112,20 @@ INSERT INTO `ug_r_records` (`rec_id`, `emp_id`, `rec_sender`, `rec_subject`, `re
 CREATE TABLE `ug_r_users` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(50) NOT NULL,
-  `user_password` varchar(30) NOT NULL,
+  `user_password` varchar(100) NOT NULL,
   `emp_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `user_active_tag` tinyint(1) NOT NULL
+  `user_active_tag` tinyint(1) NOT NULL,
+  `night_mode` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ug_r_users`
 --
 
-INSERT INTO `ug_r_users` (`user_id`, `user_name`, `user_password`, `emp_id`, `role_id`, `user_active_tag`) VALUES
-(1, 'admin', 'admin', 8, 1, 1),
-(4, 'jomar', 'jomar', 1, 1, 1);
+INSERT INTO `ug_r_users` (`user_id`, `user_name`, `user_password`, `emp_id`, `role_id`, `user_active_tag`, `night_mode`) VALUES
+(1, 'admin', '$2y$10$E/h9NCYsOJYK2nvknjK5u.7yxgKwIuLqCzriackZGO0wBrraIG7aS', 8, 1, 1, '0'),
+(4, 'jomar', 'jomar', 1, 1, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -191,26 +194,31 @@ ALTER TABLE `ug_r_user_roles`
 --
 ALTER TABLE `ug_r_departments`
   MODIFY `department_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `ug_r_employee`
 --
 ALTER TABLE `ug_r_employee`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `ug_r_records`
 --
 ALTER TABLE `ug_r_records`
   MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `ug_r_users`
 --
 ALTER TABLE `ug_r_users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `ug_r_user_roles`
 --
 ALTER TABLE `ug_r_user_roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- Constraints for dumped tables
 --
@@ -226,6 +234,7 @@ ALTER TABLE `ug_r_records`
 --
 ALTER TABLE `ug_r_users`
   ADD CONSTRAINT `ug_r_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `ug_r_employee` (`emp_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

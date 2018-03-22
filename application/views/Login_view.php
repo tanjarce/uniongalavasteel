@@ -8,12 +8,11 @@
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/favicon.png" type="image/x-icon">
     <title>Login</title>
   </head>
-  <body class="withbackgroundimage">
+  <body class="loginbody">
     <?php 
-    // echo password_hash("admin", PASSWORD_BCRYPT)
+    // echo password_hash("jomar", PASSWORD_BCRYPT)
     ?>
-    <div class="main">
-        <div class="login">
+        <div class="login" id="login_container">
             <div class="login_logo logo">
                 <div class="logo__pic">
                         <svg id='logo__pic' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880.9 113.8">
@@ -65,8 +64,8 @@
                 </div>
             </form>
         </div>
-    </div>
     <script src="<?php echo base_url() ?>assets/js/jquery.js"></script> 
+    <script src="<?php echo base_url() ?>assets/js/nprogress.js"></script>
     <script src="<?php echo base_url() ?>assets/js/login_script.js"></script>
   </body>
 </html>

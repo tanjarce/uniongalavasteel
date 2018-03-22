@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="rgb(0, 95, 39)"/>
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.dataTables.min.css"> -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">

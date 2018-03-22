@@ -473,18 +473,60 @@ p {
       width: 60px;
       z-index: 2; } }
 
-.withbackgroundimage {
-  background: url("../images/pattern-geo.jpg") center;
-  background-size: 70px; }
+.loading {
+  position: absolute;
+  height: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden; }
+
+@-webkit-keyframes load {
+  0% {
+    width: 100%;
+    -webkit-transform: translateX(-445px);
+            transform: translateX(-445px);
+    opacity: 1; }
+  100% {
+    width: 20%;
+    -webkit-transform: translateX(445px);
+            transform: translateX(445px);
+    opacity: 0.8; } }
+
+@keyframes load {
+  0% {
+    width: 100%;
+    -webkit-transform: translateX(-445px);
+            transform: translateX(-445px);
+    opacity: 1; }
+  100% {
+    width: 20%;
+    -webkit-transform: translateX(445px);
+            transform: translateX(445px);
+    opacity: 0.8; } }
+  .loading__bar {
+    position: absolute;
+    height: 5px;
+    background: #005f27;
+    -webkit-animation: load infinite 1s ease;
+            animation: load infinite 1s ease; }
+
+.loginbody {
+  background: white; }
+  @media only screen and (min-width: 426px) {
+    .loginbody {
+      background: url("../images/pattern-geo.jpg") center;
+      background-size: 70px; } }
 
 .login {
   padding: 30px;
+  padding-top: 50px;
   max-width: 425px;
+  min-width: 320px;
   margin: auto;
   background: white;
-  height: 100vh;
-  -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.1); }
+  height: 100vh; }
   @media only screen and (min-width: 426px) {
     .login {
       position: absolute;
@@ -494,7 +536,9 @@ p {
       left: 50%;
       margin: auto;
       margin-top: -250px;
-      margin-left: -214.5px; } }
+      margin-left: -214.5px;
+      -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.1);
+              box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.1); } }
 
 .logo {
   -ms-flex-wrap: wrap;

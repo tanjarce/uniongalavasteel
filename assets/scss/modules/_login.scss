@@ -1,17 +1,42 @@
 $underline: #dddddd;
+.loading{
+    position: absolute;
+    height: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(black, 0.1);
+    overflow: hidden;
+    @keyframes load{
+        0%{width: 100%; transform: translateX(-445px); opacity: 1;}
+        100%{width: 20%; transform: translateX(445px); opacity: 0.8}
+    }
 
-.withbackgroundimage{
-    background: url('../images/pattern-geo.jpg') center;
-    background-size: 70px;
+    &__bar{
+        position: absolute;
+        height: 5px;
+        background: $green;
+        animation: load infinite 1s ease;
+    }
+}
+
+
+.loginbody{
+    background: white;
+    @include media(426px){
+        background: url('../images/pattern-geo.jpg') center;
+        background-size: 70px;
+    }
 }
 
 .login{
     padding: 30px;
+    padding-top: 50px;
     max-width: 425px;
+    min-width: 320px;
     margin: auto;
     background: white;
     height: 100vh;
-    box-shadow: 1px 5px 5px rgba(black, 0.1), 0px 2px 1px rgba(black, 0.1);
     @include media(426px){
         position: absolute;
         width: 425px;
@@ -20,7 +45,8 @@ $underline: #dddddd;
         left: 50%;
         margin: auto;
         margin-top: -250px;
-        margin-left: -214.5px
+        margin-left: -214.5px;
+        box-shadow: 1px 5px 5px rgba(black, 0.1), 0px 2px 1px rgba(black, 0.1);
     }
 }
 .logo{
